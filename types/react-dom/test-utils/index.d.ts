@@ -292,7 +292,7 @@ export function createRenderer(): ShallowRenderer;
  */
 // the "void | undefined" is here to forbid any sneaky "Promise" returns.
 // the actual return value is always a "DebugPromiseLike".
-export function act(callback: () => void | undefined): DebugPromiseLike;
+export function act(callback: () => void | undefined | Promise<void | undefined>): DebugPromiseLike;
 
 // Intentionally doesn't extend PromiseLike<never>.
 // Ideally this should be as hard to accidentally use as possible.
